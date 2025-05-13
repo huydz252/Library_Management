@@ -109,18 +109,6 @@ public class LibraryApplication {
 			bookService.save(book23);
 			bookService.save(book24);
 			bookService.save(book25);
-			
-			book10.setTheUser(user3);
-			book10.setReturnDate(LocalDate.of(2021, 5, 23));
-			
-			book1.setTheUser(user3);
-			book1.setReturnDate(LocalDate.of(2021, 5, 05));
-			
-			user3.setBooks(Arrays.asList(book10, book1));
-			
-			bookService.save(book1);
-			bookService.save(book10);
-			usService.save(user3);
 						
 			midAppRef.midnightApplicationRefresher();	
 		};
