@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
+	<meta charset="UTF-8">
 <title>Home</title>
 <link rel="stylesheet" type="text/css" th:href="@{/CSS/account-layout.css}">
 </head>
@@ -9,15 +9,15 @@
 <ul th:replace="page-layout :: userNavBar"></ul>
 	
 	<div class="container">
-		<h2 th:text="${'Welcome' + ' ' + currentUser.firstName + ' ' + currentUser.lastName}"></h2>
+		<h2 th:text="${'Chào Mừng' + ' ' + currentUser.firstName + ' ' + currentUser.lastName}"></h2>
 	</div>
 
 	<div class="container">
 		
-		<h3>Notifications</h3>
+		<h3>Thông báo</h3>
 		
 		<div th:if="${booksWithFines.size() == 0 && currentUser.notifications.size() == 0}">
-			<p>There are no notifications.</p>
+			<p>Hiện tại không có thông báo.</p>
 		</div>
 				
 		<div th:if="${currentUser.notifications.size() > 0}">
@@ -33,8 +33,8 @@
 		
 		<div th:if="${booksWithFines.size() > 0}">			
 			<p style="color: red">WARNING</p>
-			<p>The return date of one or more books has expired. If possible, extend the return date or return the book(s) to the library as soon as possible to prevent higher fines. 
-			Until all overdue books are returned to the library, no new reservations can be made.</p>
+			<p>Ngày trả một hoặc nhiều sách đã hết hạn. Nếu có thể, hãy gia hạn ngày trả hoặc trả sách cho thư viện càng sớm càng tốt để tránh bị phạt cao hơn.
+				Không thể đặt chỗ mới cho đến khi tất cả sách quá hạn được trả lại thư viện.</p>
 			
 			<table id="tablestyle">
 				<tr>

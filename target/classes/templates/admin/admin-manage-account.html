@@ -1,140 +1,138 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Manage Account</title>
-<link rel="stylesheet" type="text/css" th:href="@{/CSS/account-layout.css}">
+	<meta charset="UTF-8">
+	<title>Quản lý tài khoản</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/CSS/account-layout.css}">
 </head>
 <body>
-	
-	<div class="container">
-	
-	<h3>Manage Account</h3>		
-		
-		<div class="row">	
-			<div class="col-50">
-				<text>Username:</text>		
-			</div>
-			<div class="col-75">
-				<text th:text="${user.userName}"></text>			
-			</div>
+
+<div class="container">
+
+	<h3>Quản lý tài khoản</h3>
+
+	<div class="row">
+		<div class="col-50">
+			<text>Tên đăng nhập:</text>
 		</div>
-		
-		<div class="row">	
-			<div class="col-50">
-				<text>First name:</text>		
-			</div>
-			<div class="col-75">
-				<text th:text="${user.firstName}"></text>			
-			</div>
+		<div class="col-75">
+			<text th:text="${user.userName}"></text>
 		</div>
-		
-		
-		<div class="row">	
-			<div class="col-50">
-				<text>Last name:</text>		
-			</div>
-			<div class="col-75">
-				<text th:text="${user.lastName}"></text>			
-			</div>
+	</div>
+
+	<div class="row">
+		<div class="col-50">
+			<text>Tên:</text>
 		</div>
-		
+		<div class="col-75">
+			<text th:text="${user.firstName}"></text>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="col-50">
+			<text>Họ:</text>
+		</div>
+		<div class="col-75">
+			<text th:text="${user.lastName}"></text>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-50">
+			<text>Email:</text>
+		</div>
+		<div class="col-75">
+			<text th:text="${user.email}"></text>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-50">
+			<text>Số điện thoại:</text>
+		</div>
+		<div class="col-75">
+			<text th:text="${user.phoneNumber}"></text>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-50">
+			<text>Địa chỉ:</text>
+		</div>
+		<div class="col-75">
+			<text th:text="${user.address}"></text>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-50">
+			<text>Thành phố:</text>
+		</div>
+		<div class="col-75">
+			<text th:text="${user.city}"></text>
+		</div>
+	</div>
+
+	<form th:action="@{/admin/confirmaccountsettings}" th:method="PUT">
 		<div class="row">
 			<div class="col-50">
-				<text>Email:</text>
+				<text>Trạng thái tài khoản:</text>
 			</div>
-			<div class="col-75">
-				<text th:text="${user.email}"></text>
-			</div>
-		</div>
-		
-		<div class="row">
-			<div class="col-50">
-				<text>Phone number:</text>
-			</div>
-			<div class="col-75">
-				<text th:text="${user.phoneNumber}"></text>
-			</div>
-		</div>
-		
-		<div class="row">
-			<div class="col-50">
-				<text>Address:</text>
-			</div>
-			<div class="col-75">
-				<text th:text="${user.address}"></text>
-			</div>
-		</div>
-		
-		<div class="row">
-			<div class="col-50">
-				<text>City:</text>
-			</div>
-			<div class="col-75">
-				<text th:text="${user.city}"></text>
-			</div>
-		</div>
-		
-		<form th:action="@{/admin/confirmaccountsettings}" th:method="PUT">
-		<div class="row">
-			<div class="col-50">
-				<text>Account status:</text>
-			</div>
-			
+
 			<div class="col-50">
 				<input type="radio" id="accStatus" name="accStatus" value="true" th:checked="${user.enabled == true}">
-				<text for="enabled">Account enabled</text>
+				<text for="enabled">Tài khoản đã kích hoạt</text>
 			</div>
-		
+
 			<div class="col-50">
 				<input type="radio" id="accStatus" name="accStatus" value="false" th:checked="${user.enabled == false}">
-				<text for="accStatus">Account disabled</text>
-			</div>			
+				<text for="accStatus">Tài khoản đã vô hiệu hóa</text>
+			</div>
 		</div>
-		
+
 		<div class="row">
 			<div class="col-50">
-				<text>Role:</text>
+				<text>Quyền:</text>
 			</div>
-			
+
 			<div class="col-50">
 				<input type="radio" id="role" name="role" value="ROLE_USER" th:checked="${user.role.equals('ROLE_USER')}">
-				<text for="role">User</text>
+				<text for="role">Người dùng</text>
 			</div>
-			
+
 			<div class="col-50">
 				<input type="radio" id="role" name="role" value="ROLE_EMPLOYEE" th:checked="${user.role.equals('ROLE_EMPLOYEE')}">
-				<text for="role">Employee</text>
+				<text for="role">Nhân viên</text>
 			</div>
-			
+
 			<div class="col-50">
 				<input type="radio" id="role" name="role" value="ROLE_ADMIN" th:checked="${user.role.equals('ROLE_ADMIN')}">
-				<text for="role">Admin</text>
+				<text for="role">Quản trị viên</text>
 			</div>
-			
+
 		</div>
-		
-		
-		<br/>
-	
+
+
 		<div class="row">
 			<div class="col-50">
-					<input type="submit" value="Save">
-					<input type="hidden" th:value="PUT" th:name="_method">
-					<input type="hidden" th:value="${user.userId}" name="userId">
-					<input type="hidden" th:value="${accStatus}">
-					<input type="hidden" th:value="${role}">
-				</form>
-			</div>
-			
-			<div class="col-50">
-				<form th:action="@{/admin/manageaccounts}" th:method="GET">	
-					<input type="submit" value="Cancel" style="background-color: red">
-				</form>
-			</div>
-		</div>
-	
-	</div>
-	
+				<input type="submit" value="Lưu">
+				<input type="hidden" th:value="PUT" th:name="_method">
+				<input type="hidden" th:value="${user.userId}" name="userId">
+				<input type="hidden" th:value="${accStatus}">
+				<input type="hidden" th:value="${role}">
+	</form>
+</div>
+
+<div class="col-50">
+	<form th:action="@{/admin/manageaccounts}" th:method="GET">
+		<input type="submit" value="Quay Lại" style="background-color: red">
+	</form>
+</div>
+</div>
+
+</div>
+
 </body>
 </html>

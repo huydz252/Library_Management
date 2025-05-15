@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Return date can not be extended</title>
-<link rel="stylesheet" type="text/css" th:href="@{/CSS/account-layout.css}">
+	<meta charset="UTF-8">
+
+	<title>Không thể gia hạn ngày trả</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/CSS/account-layout.css}">
 </head>
 <body>
-	
-	<div class="container">
-		<h3>Return date can not be extended</h3>
-		
-		<p>The return date of the book you are trying to extend, cannot be extended. Possible reasons are:
+
+<div class="container">
+	<h3>Không thể gia hạn ngày trả sách</h3>
+
+	<p>Ngày trả sách mà bạn đang cố gắng gia hạn không thể được gia hạn. Những lý do có thể bao gồm:
 		<br/><br/>
-		- The maximum period of use is reached.<br/>
-		- The return date is already extended by 3 weeks.<br/>
-		- Someone else reserved the book.<br/><br/>
-		
-		Please make sure to return this book on time to the library.
-		</p>
-		
-	
-		<div class="row">
-			<form th:action="@{/user/yourbooks}" method="GET">
-				<input style="width: 200px" type="submit" value="Go back to your books">
-			</form>
-		</div>
-		
+		- Đã đạt đến thời gian sử dụng tối đa.<br/>
+		- Ngày trả đã được gia hạn thêm 3 tuần.<br/>
+		- Đã có người khác đặt trước cuốn sách này.<br/><br/>
+
+		Vui lòng đảm bảo trả sách đúng hạn cho thư viện.
+	</p>
+
+	<div class="row">
+		<form th:action="@{/user/yourbooks}" method="GET">
+			<input style="width: 150px" type="submit" value="Quay lại trước đó">
+		</form>
 	</div>
-	
+
+</div>
+
 </body>
 </html>

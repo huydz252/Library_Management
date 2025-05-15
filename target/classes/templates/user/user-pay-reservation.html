@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
+	<meta charset="UTF-8">
 <title>Pay Reservation</title>
 <link rel="stylesheet" type="text/css" th:href="@{/CSS/account-layout.css}">
 </head>
 <body>
 
 	<div class="container">
-		<h3>Pay reservation</h3>
+		<h3>Thanh toán đặt trước</h3>
 		<img src="/Images/payment-icons.png" alt="Payment icons...">
 		
 		<div class="row">
 			<div class="col-25">
-			 	Total costs:
+			 	Tổng tiền:
 			</div>
 			<div class="col-75">
-				<text th:text="${'$ ' + amountToPay + ',-'}"></text>
+				<text th:text="${'$ ' + amountToPay}"></text>
 			</div>
 		</div>
 		
 		<div class="row">
 			<div class="col-75">
 				<form th:action="@{/user/browsebooks/savereservation}" th:method="PUT">	
-					<input type="submit" value="Pay and complete reservation" style="width: 200px">
+					<input type="submit" value="Thanh toán" style="width: 200px">
 					<input type="hidden" value="PUT" name="_method">
 					<input type="hidden" th:value="${reservedBookIdsInString}" th:name="reservedBookIdsInString">
 				</form>

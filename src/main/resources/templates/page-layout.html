@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
+  <meta charset="UTF-8">
 </head>
 <body>
 
 <ul th:fragment="userNavBar">
-  <li><a href="/user">Home</a></li>
-  <li><a href="/user/yourbooks">Your Books</a></li>
-  <li><a href="/user/browsebooks">Browse Books</a></li>
-  <li><a href="/user/yourreservations">Your Reservations</a></li>
-  <li><a href="/user/FAQ">FAQ</a></li>
-  <li style="float:right"><a class="active" href="/logout">Logout</a></li>
+  <li><a href="/user">Trang Chủ</a></li>
+  <li><a href="/user/yourbooks">Sách đã đặt</a></li>
+  <li><a href="/user/browsebooks">Tìm Kiếm và Đặt Sách</a></li>
+  <li><a href="/user/yourreservations">Yêu Cầu Đặt Sách Của Tôi</a></li>
+  <li><a href="/user/FAQ">Trợ Giúp</a></li>
+  <li style="float:right"><a class="active" href="/logout">Đăng xuất</a></li>
 </ul>
 
 <ul th:fragment="employeeNavBar">
-  <li><a href="/employee">Home</a></li>
-  <li><a href="/employee/users/showusers">Users</a></li>
-  <li><a href="/employee/books/showbooks">Catalog</a></li>
-  <li><a href="/employee/orders">Place Order</a></li>
-  <li><a href="/employee/returnedbooks">Return Books</a></li>
-  <li><a href="/employee/reservations">Process Reservations</a></li>
-  <li style="float:right"><a class="active" href="/logout">Logout</a></li>
+  <li><a href="/employee">Trang Chủ</a></li>
+  <li><a href="/employee/users/showusers">Người dùng</a></li>
+  <li><a href="/employee/books/showbooks">Sách</a></li>
+  <li><a href="/employee/orders">Đặt Sách</a></li>
+  <li><a href="/employee/returnedbooks">Trả Sách</a></li>
+  <li><a href="/employee/reservations">Đơn Đặt Sách</a></li>
+  <li style="float:right"><a class="active" href="/logout">Đăng xuất</a></li>
 </ul>
 
 <ul th:fragment="adminNavBar">
   <li><a href="/admin">Home</a></li>
-  <li><a href="/admin/manageaccounts">Manage Accounts</a></li>
-  <li style="float:right"><a class="active" href="/logout">Logout</a></li>
+  <li><a href="/admin/manageaccounts">Quản Lí Tài Khoản</a></li>
+  <li style="float:right"><a class="active" href="/logout">Đăng xuất</a></li>
 </ul>
 
 </body>

@@ -317,8 +317,8 @@ public class EmployeeController {
 											@RequestParam Long userId) {
 			
 			Book book = bookService.findById(bookId);
-			Notification notification = new Notification(LocalDate.now(), book.getEndReservationDate(), "Your reservation is ready for pick-up until " + 
-														book.getEndReservationDate() + ". " + book.getTitle() + " by " + book.getAuthor() + "."); 
+			Notification notification = new Notification(LocalDate.now(), book.getEndReservationDate(), "Bạn đã có thể đến nhận sách " +  book.getTitle() + " của " + book.getAuthor() + ", hạn cuối " +
+														book.getEndReservationDate() + ". " );
 												
 			notification.setValidUntilDate(book.getEndReservationDate());
 			notification.setNotificationReceiver(usService.findById(userId));

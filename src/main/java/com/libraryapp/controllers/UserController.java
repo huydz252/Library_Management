@@ -121,6 +121,7 @@ public class UserController {
 		
 	@GetMapping(value="/yourbooks/bookextended")
 	public String bookExtended() {
+
 		return "user/user-book-extended.html";
 	}
 	

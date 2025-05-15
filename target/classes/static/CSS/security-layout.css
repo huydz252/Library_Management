@@ -40,8 +40,8 @@ input[type=submit] {
 
 .container {
 	
-  width: 350px;
-  height: 195px;	
+  width: 360px;
+  height: 230px;
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
@@ -86,7 +86,7 @@ input[type=submit] {
 .containerRegister {
 	
   width: 470px;
-  height: 530px;	
+  height: 560px;
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;

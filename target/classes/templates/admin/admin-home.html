@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
+	<meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" th:href="@{/CSS/account-layout.css}">
 <title>Home</title>
 </head>
@@ -14,10 +14,10 @@
 	</div>
 	
 	<div class="container">
-		<h3>Notifications</h3>
+		<h3>Thông báo</h3>
 		
 		<div th:if="${currentUser.notifications.size() == 0}">
-			<p>There are no notifications.</p>
+			<p>Hiện tại chưa có thông báo</p>
 		</div>
 				
 		<div th:if="${currentUser.notifications.size() > 0}">
